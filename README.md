@@ -4,8 +4,6 @@ Mappy
 Mappy is `java.util.Map<String, Object> made simple. Mappy is useful when you are dealing with "maps of maps", e.g.
 responses from JSON-API's. It is assumed that all keys are strings, but the values can be anything, particularly lists and other maps.
 
-# Features
-
 ## Creating maps
 - Simple creation of maps using tuples (key value pairs).
 - Create a copy of a map and add in more tuples.
