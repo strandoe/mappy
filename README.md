@@ -1,7 +1,7 @@
 Mappy
 =====
 
-Mappy is `java.util.Map<String, Object>` made simple. Mappy is useful when you are dealing with "maps of maps", e.g.
+Mappy is `java.util.Map<String, Object> made simple. Mappy is useful when you are dealing with "maps of maps", e.g.
 responses from JSON-API's. It is assumed that all keys are strings, but the values can be anything, particularly lists and other maps.
 
 # Features
@@ -36,10 +36,6 @@ assertTrue(values.contains("Øystein"));
 assertTrue(values.contains("Jimi Hendrix"));
 ```
 
-## Finding submaps
-Find the first or all maps located at a key pattern in a map or list of maps you are searching in, that
-matches a list of tuples. The submaps match the tuples if they contain the same keys and values of the specified tuples.
-
 ### Pick a value or list
 
 ```java
@@ -68,6 +64,10 @@ Map<String, Object> map = Mappy.<Object>map(
 );
 assertEquals(list, pick(map, keys("key3.key3A[]")));
 ```
+
+## Finding submaps
+Find the first or all maps located at a key pattern in a map or list of maps you are searching in, that
+matches a list of tuples. The submaps match the tuples if they contain the same keys and values of the specified tuples.
 
 ### Finding in a list of maps at key pattern
 
