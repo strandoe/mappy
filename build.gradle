@@ -1,0 +1,20 @@
+apply plugin: 'java'
+
+compileJava.options.encoding = 'UTF-8'
+compileJava.sourceCompatibility = '1.7'
+compileJava.targetCompatibility = '1.7'
+
+group = 'com.oysteinstrand.mappy'
+version = '1.0'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.9'
+    distributionUrl = 'http://services.gradle.org/distributions/gradle-1.9-all.zip'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile 'com.google.guava:guava:16.0.1'
+    testCompile 'junit:junit:4.8.2'
+}
