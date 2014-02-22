@@ -1,8 +1,21 @@
 Mappy
 =====
 
-Mappy is `java.util.Map<String, Object>` made simple. Mappy is useful when you are dealing with "maps of maps", e.g.
-responses from JSON-API's. It is assumed that all keys are strings, but the values can be anything, particularly lists and other maps.
+Tired of mapping API responses to domain objects with annotations or mappers?
+And then mapping back to your own response?
+Why not work with directly with maps from start to finish?
+Mappy helps you work with Java maps like you would using JavaScript objects and Underscore.js.
+
+### Benefits of maps
+- Simple to understand and use. So much of what we do are really just nested keys and values
+- Comes with usable toString(), equals() and hashCode()
+- Works with many templating tools, like Handlebars/Mustache and Apache Velocity
+- Easy to map to and from JSON responses, e.g. with Google GSON
+- Don't have to be statically typed when you don't need that
+- Separation of data and operations on the data makes it easy to reuse common logic, like
+getting nested values and searching
+
+Mappy assumes that all keys are strings, but the values can be anything, particularly lists and other maps.
 
 ## Creating maps
 - Simple creation of maps using tuples (key value pairs).
