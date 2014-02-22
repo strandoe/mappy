@@ -17,9 +17,17 @@ getting nested values and searching
 
 Mappy assumes that all keys are strings, but the values can be anything, particularly lists and other maps.
 
-## Creating maps
+### Features of Mappy
 - Simple creation of maps using tuples (key value pairs).
 - Create a copy of a map and add in more tuples.
+- Traverse a map using a key pattern like "countries.nordic[2].countryCode", and fetch the object at the last key in the key pattern.
+- Pluck values from a list of maps, i.e. get the value for a key for all the maps in the list.
+- Find the first or all maps located at a key pattern in a map or list of maps you are searching in, that
+  matches a list of tuples. The submaps match the tuples if they contain the same keys and values of the specified tuples.
+
+# Examples
+
+## Creating maps
 
 ```java
 Map<String, Object> map = map(tuple("key1", "val1"), tuple("key2", "val2"), tuple("key3", map(tuple("key3A", "val3A"))));
@@ -33,8 +41,6 @@ assertTrue(map2.containsKey("hello"));
 ```
 
 ## Fetch submaps, objects and properties of a map or list of maps
-- Traverse a map using a key pattern like "countries.nordic[2].countryCode", and fetch the object at the last key in the key pattern.
-- Pluck values from a list of maps, i.e. get the value for a key for all the maps in the list.
 
 ### Pluck properties
 
@@ -77,8 +83,6 @@ assertEquals(list, pick(map, keys("key3.key3A[]")));
 ```
 
 ## Finding submaps
-Find the first or all maps located at a key pattern in a map or list of maps you are searching in, that
-matches a list of tuples. The submaps match the tuples if they contain the same keys and values of the specified tuples.
 
 ### Finding in a list of maps at key pattern
 
