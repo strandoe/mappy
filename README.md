@@ -1,7 +1,7 @@
 Mappy
 =====
 
-Mappy is `java.util.Map<String, Object> made simple. Mappy is useful when you are dealing with "maps of maps", e.g.
+Mappy is `java.util.Map<String, Object>` made simple. Mappy is useful when you are dealing with "maps of maps", e.g.
 responses from JSON-API's. It is assumed that all keys are strings, but the values can be anything, particularly lists and other maps.
 
 ## Creating maps
