@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'maven'
 
 compileJava.options.encoding = 'UTF-8'
 compileJava.sourceCompatibility = '1.7'
