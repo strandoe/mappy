@@ -79,7 +79,7 @@ Map<String, Object> map = Mappy.<Object>map(
         tuple("key3", map(tuple("key3A", list))
         )
 );
-assertEquals(list, pick(map, keys("key3.key3A[]")));
+assertEquals(list, pick(map, keys("key3.key3A")));
 ```
 
 ## Finding submaps
@@ -95,7 +95,7 @@ assertTrue(contains(found, christina));
 ### Finding in a map at key pattern
 
 ```java
-Iterable found = where(ObjectMother.countries, keys("countries.nordic[]"), tuple("countryCode", "SE"));
+Iterable found = where(ObjectMother.countries, keys("countries.nordic"), tuple("countryCode", "SE"));
 assertTrue(contains(found, ObjectMother.sweden));
 ```
 
