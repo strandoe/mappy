@@ -52,15 +52,6 @@ public class Mappy {
         String currentKey = keys.get(index);
         visitedKeys.add(currentKey);
         Matcher arrayWithIndexMatcher = Pattern.compile("(\\w+)\\[(\\d)\\]").matcher(currentKey);
-        Matcher arrayWithoutIndexMatcher = Pattern.compile("(\\w+)\\[\\]").matcher(currentKey);
-
-        if (arrayWithoutIndexMatcher.find()) {
-            Object o = map.get(arrayWithoutIndexMatcher.group(1));
-            if (!(o instanceof List)) {
-                throw new IllegalStateException("Expected list as last key value for pattern " + Joiner.on(".").join(keys));
-            }
-            return o;
-        }
 
         Object o;
         if (arrayWithIndexMatcher.find() && arrayWithIndexMatcher.groupCount() > 1) {

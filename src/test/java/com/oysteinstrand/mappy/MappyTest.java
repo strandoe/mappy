@@ -58,7 +58,7 @@ public class MappyTest {
                 tuple("key3", map(tuple("key3A", list))
                 )
         );
-        assertEquals(list, pick(map, keys("key3.key3A[]")));
+        assertEquals(list, pick(map, keys("key3.key3A")));
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
@@ -168,7 +168,7 @@ public class MappyTest {
 
     @Test
     public void should_search_in_maps_with_lists() throws Exception {
-        Iterable found = where(ObjectMother.countries, keys("countries.nordic[]"), tuple("countryCode", "SE"));
+        Iterable found = where(ObjectMother.countries, keys("countries.nordic"), tuple("countryCode", "SE"));
         assertTrue(contains(found, ObjectMother.sweden));
     }
 
