@@ -171,4 +171,19 @@ public class MappyTest {
         Iterable found = where(ObjectMother.countries, keys("countries.nordic[]"), tuple("countryCode", "SE"));
         assertTrue(contains(found, ObjectMother.sweden));
     }
+
+    @Test
+    public void should_find_where_multiple_conditions() throws Exception {
+        List<Map<String, Object>> list = Arrays.asList(
+                map(tuple("name", "Øystein"), tuple("address", "Pilestredet")),
+                null,
+                map(tuple("name", "Jimi Hendrix"), tuple("address", "The moon")),
+                map(tuple("name", "Christina"), tuple("address", "Pilestredet")),
+                null,
+                map(tuple("name", null), tuple("address", null)),
+                map(tuple(null, null), tuple(null, null))
+        );
+        Optional<Map> found = findWhere(list, matchesTuples(tuple("name", "Stian"), tuple("address", "Pilestredet")));
+        assertFalse(found.isPresent());
+    }
 }

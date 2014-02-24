@@ -25,9 +25,9 @@ public class MatchesTuples implements Predicate<Map<String, Object>> {
             return false;
         }
         Map m = (Map)o;
-        boolean matches = false;
+        boolean matches = true;
         for (Tuple tuple : tuples) {
-            matches = m.get(tuple.k) != null && m.get(tuple.k).equals(tuple.v);
+            matches &= m.get(tuple.k) != null && m.get(tuple.k).equals(tuple.v);
         }
         return matches;
     }
